@@ -1,0 +1,45 @@
+@import "../../common/styles/Auth";
+
+.registerContent {
+  width: 80%;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  z-index: 1;
+  background: hsl(0, 0, 100);
+  border-radius: 36px;
+  box-shadow: 0 3px 25px hsla(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+  border: 8px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to right, #743AB6, #d53a9d);
+
+  .form-class{
+    margin: 5%;
+  }
+}
+
+.logo {
+  width: 20%;
+  height: 15%;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+}
+
+.avatar-uploader > .ant-upload {
+  width: 128px;
+  height: 128px;
+}
+.btn-uploader{
+  width: 128px;
+  height: 128px;
+  border-style: dotted;
+  text-align: center;
+  vertical-align: middle;
+}
+
+
