@@ -2,7 +2,6 @@ import "antd/dist/antd.min.css";
 import "app/styles/style.scss";
 import React, {Component, Suspense} from "react";
 import { ConfigProvider } from 'antd';
-import arEG from 'antd/es/locale/ar_EG';
 import { Router, Switch, Route, Redirect, useParams } from 'react-router-dom'
 import popupContainer from "app/utils/PopupContainer";
 import Routes from "app/constants/Routes";
@@ -13,7 +12,6 @@ import AuthRoute from "app/components/routes/AuthRoute";
 import ProtectedRoute from "app/components/routes/ProtectedRoute";
 import ResetPassword from "auth/reset-password/components/ResetPassword";
 import ChangePassword from "auth/change-password/components/ChangePassword";
-import {getCompanyRoute} from "app/utils/RouteHelper";
 import ProtectedRedirectRoute from "app/components/routes/ProtectedRedirectRoute";
 import Page from "page/components/Page";
 import RoleType from "identity/constants/RoleType";
@@ -21,18 +19,21 @@ import Dashboard from "app/components/common/Dashboard";
 import EditCompany from "entities/companies/components/company/EditCompany";
 import CompaniesList from "../../entities/companies/components/list/CompaniesList";
 import en_US from 'antd/lib/locale/en_US';
-import ar_EG from 'antd/lib/locale/ar_EG';
+import fa_IR from 'antd/lib/locale/fa_IR';
 import {DirectionType} from "antd/es/config-provider";
+import Register from "../../auth/register/components/Register";
 
 const App: React.FC = () =>
 {
-    let antLang = en_US;
+    /*let antLang = en_US;
     let dir: DirectionType = 'ltr';
     const language = localStorage.getItem("currentLanguage");
     if(language && language != 'en') {
         antLang = ar_EG;
         dir = 'rtl';
-    }
+    }*/
+    let dir: DirectionType = 'rtl';
+    let antLang = fa_IR;
     return (
         <ConfigProvider locale={antLang} getPopupContainer={popupContainer} direction={dir}>
             <Suspense fallback="">
@@ -45,6 +46,7 @@ const App: React.FC = () =>
                         <Route path={Routes.auth}>
                             <Switch>
                                 <AuthRoute exact path={Routes.auth} component={Login} />
+                                <Route exact path={Routes.register} component={Register} />
                                 <Route exact path={Routes.resetPassword} component={ResetPassword} />
                                 <Route exact path={Routes.changePassword} component={ChangePassword} />
 

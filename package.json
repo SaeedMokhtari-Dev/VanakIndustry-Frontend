@@ -12,6 +12,8 @@
     "file-saver": "^2.0.5",
     "i18next": "^19.9.0",
     "i18next-xhr-backend": "^3.2.2",
+    "jalali-moment": "^3.3.10",
+    "jalali-react-datepicker": "^1.2.1",
     "loglevel": "^1.7.1",
     "loglevel-plugin-remote": "^0.6.8",
     "mobx": "^6.1.8",

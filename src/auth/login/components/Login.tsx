@@ -7,8 +7,7 @@ import i18next from "i18next";
 import {withTranslation} from "react-i18next";
 import Routes from "app/constants/Routes";
 import { Link } from "react-router-dom";
-import history from "../../../app/utils/History";
-import {useParams} from "react-router-dom";
+
 import { EyeInvisibleOutlined, EyeTwoTone, UserOutlined, LockOutlined } from '@ant-design/icons';
 import NavigationService from "../../../app/services/NavigationService";
 
@@ -59,11 +58,14 @@ const Login: React.FC<LoginProps> = inject('authStore')(observer(({authStore}) =
     function resetPasswordPage(){
         NavigationService.navigate(Routes.resetPassword);
     }
+    function resetRegisterPage(){
+        NavigationService.navigate(Routes.register);
+    }
     return (
         <div>
                 <div className={"mainContent"}>
                     <div className="signup-connect">
-                        <img src="/images/vanak-industry-logo.png" className="logo" alt="logo"/>
+                        <img src="/images/vanak-industry-logo.png" className="login-logo" alt="logo"/>
                     </div>
                     <div className="signup-classic">
                         <Form layout="vertical" onFinish={onFinish} >
@@ -74,7 +76,7 @@ const Login: React.FC<LoginProps> = inject('authStore')(observer(({authStore}) =
                                                message: i18next.t("Authentication.Validation.Message.Username.Required")
                                            }
                                        ]}>
-                                <Input prefix={<UserOutlined className="site-form-item-icon" />} onChange={onUsernameChanged} className="text-input"/>
+                                <Input  prefix={<UserOutlined className="site-form-item-icon" />} onChange={onUsernameChanged} className="text-input"/>
                             </Form.Item>
                             <Form.Item initialValue={viewModel.password} name="password" label={i18next.t("Authentication.Label.Password")} required={false}
                                        rules={[
@@ -97,11 +99,16 @@ const Login: React.FC<LoginProps> = inject('authStore')(observer(({authStore}) =
                                 {i18next.t("Authentication.Button.Login")}
                             </Button>
                             <div className="link">
-                                {/*<Link to={Routes.resetPassword}></Link>*/}
+                                <Button type="link" onClick={resetRegisterPage}>
+                                    {i18next.t('Authentication.Link.Register')}
+                                </Button>
+                            </div>
+                            {/*<div className="link">
+                                <Link to={Routes.resetPassword}></Link>
                                 <Button type="link" onClick={resetPasswordPage}>
                                     {i18next.t('Authentication.Link.ForgotPassword')}
                                 </Button>
-                            </div>
+                            </div>*/}
                         </Form>
                     </div>
                 </div>

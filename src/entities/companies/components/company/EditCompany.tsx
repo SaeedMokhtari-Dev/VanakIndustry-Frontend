@@ -15,6 +15,7 @@ import history from "../../../../app/utils/History";
 import { PasswordInput } from 'antd-password-input-strength';
 import "./EditCompany.scss";
 import MaskedInput from "antd-mask-input";
+import Qualifications from "../../../../app/constants/Qualifications";
 const {useEffect} = React;
 
 const { Option } = Select;

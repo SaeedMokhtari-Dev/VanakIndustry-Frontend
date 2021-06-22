@@ -3,10 +3,13 @@ import LoginViewModel from "auth/login/view-models/LoginViewModel";
 import {makeAutoObservable} from "mobx";
 import ResetPasswordViewModel from "../reset-password/view-models/ResetPasswordViewModel";
 import ChangePasswordViewModel from "../change-password/view-models/ChangePasswordViewModel";
+import RegisterViewModel from "../register/view-models/RegisterViewModel";
 
 export default class AuthStore
 {
     loginViewModel: LoginViewModel;
+
+    registerViewModel: RegisterViewModel;
 
     resetPasswordViewModel: ResetPasswordViewModel;
 
@@ -15,6 +18,16 @@ export default class AuthStore
     constructor(public appStore: AppStore)
     {
         makeAutoObservable(this);
+    }
+
+    onRegisterPageLoad()
+    {
+        this.registerViewModel = new RegisterViewModel(this);
+    }
+
+    onRegisterPageUnload()
+    {
+        this.registerViewModel = null;
     }
 
     onLoginPageLoad()

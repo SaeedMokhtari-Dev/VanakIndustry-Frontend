@@ -83,10 +83,10 @@ const ContentHeader: React.FC<ContentHeaderProps> = inject(Stores.pageStore)(obs
     return (
         <Header className="site-layout-background" style={{ padding: 0 }}>
             <Menu mode="horizontal" style={localStorage.getItem("currentLanguage") == 'en' ? {float:"right"} : {float:"left"}}>
-                <SubMenu key="language" icon={<SettingOutlined />} title={i18next.t("General.HeaderMenu.Languages")}>
+                {/*<SubMenu key="language" icon={<SettingOutlined />} title={i18next.t("General.HeaderMenu.Languages")}>
                     <Menu.Item key="en" onClick={changeLanguage}>{i18next.t("General.HeaderMenu.English")}</Menu.Item>
                     <Menu.Item key="fa" onClick={changeLanguage}>{i18next.t("General.HeaderMenu.Farsi")}</Menu.Item>
-                </SubMenu>
+                </SubMenu>*/}
                 <SubMenu key="user" icon={<UserOutlined />} title={i18next.t("General.HeaderMenu.User") + " " + UserContext.info?.name}>
                     <Menu.Item key="profile">{i18next.t("General.HeaderMenu.Profile")}</Menu.Item>
                     <Menu.Item key="changePassword" onClick={() => setModalVisible(true)}>{i18next.t("General.HeaderMenu.ChangePassword")}</Menu.Item>

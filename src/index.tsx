@@ -34,12 +34,14 @@ configure({
     observableRequiresReaction: false,
     disableErrorBoundaries: false
 })
-const lang = localStorage.getItem("currentLanguage");
+/*const lang = localStorage.getItem("currentLanguage");
 if(lang) {
     i18n.changeLanguage(lang);
 }
 else
-    i18n.changeLanguage(process.env.REACT_APP_DEFAULT_LANGUAGE);
+    i18n.changeLanguage(process.env.REACT_APP_DEFAULT_LANGUAGE);*/
+
+i18n.changeLanguage('fa');
 
 ReactDOM.render(
     <I18nextProvider i18n={i18n}>

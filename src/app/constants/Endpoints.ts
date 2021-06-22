@@ -1,5 +1,6 @@
 export default
 {
+    apiAuthRegister: "/api/auth/register",
     apiAuthLogin: "/api/auth/login",
     apiAuthResetPassword: "/api/auth/reset-password",
     apiAuthValidateResetPasswordToken: "/api/auth/validate-reset-password-token",

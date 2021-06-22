@@ -1,7 +1,7 @@
 export default
 {
     auth: "/auth",
-    login: "/auth/:roleType",
+    register: "/auth/register",
 
     resetPassword: "/auth/password/reset",
     changePassword: "/auth/password/change/:token",
