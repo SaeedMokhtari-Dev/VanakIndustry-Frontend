@@ -91,6 +91,7 @@
 
   "Api.Auth.ChangePassword.NotEqualPasswords": "Password and confirm password are not equals",
   "Api.Auth.ChangePassword.Successful": "Password Changed Successfully",
+  "Api.Auth.ChangePassword.CurrentIsNotCorrect": "Current Password is not correct",
 
   "Api.Generic.Error": "An error has occurred while processing the request",
   "Api.Resource.Not.Found": "The specified resource was not found",

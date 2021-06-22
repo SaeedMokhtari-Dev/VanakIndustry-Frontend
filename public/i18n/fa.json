@@ -58,6 +58,7 @@
   "Api.Auth.CurrentPassword.Required": "لطفا کلمه عبور جاری را وارد نمایید",
   "Api.Auth.Token.Required": "توکن اجباری است.",
   "Api.Auth.ChangePassword.CurrentPasswordIsNotCorrect": "کلمه عبور جاری شما درست نیست.",
+  "Api.Auth.ChangePassword.CurrentIsNotCorrect": "کلمه عبور جاری درست نیست.",
 
   "ResetPassword.Label.ResetPassword": "ریست کلمه عبور",
   "ResetPassword.Link.BackToLogin": "برگشت به صفحه ورود",
@@ -71,7 +72,7 @@
   "ChangePassword.Button.ChangePassword": "تغییر کلمه عبور",
   "ChangePassword.Error.ChangePasswordFailed": "در پروسه تغییر کلمه عبور ایرادی اتفاق افتاده است.",
   "ChangePassword.Label.currentPassword": "کلمه عبور جاری",
-  "ChangePassword.Label.NewPassword": "کلمه عبور جدی",
+  "ChangePassword.Label.NewPassword": "کلمه عبور جدید",
   "ChangePassword.Label.ConfirmPassword": "تایید کلمه عبور جدید",
   "ChangePassword.Validation.Message.CurrentPassword.Required": "لطفا کلمه عبور جاری را وارد نمائید.",
   "ChangePassword.Validation.Message.NewPassword.Required": "لطفا کلمه عبور جدید را وارد نمائید.",

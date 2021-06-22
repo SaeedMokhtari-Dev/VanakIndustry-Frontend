@@ -82,7 +82,8 @@ const ContentHeader: React.FC<ContentHeaderProps> = inject(Stores.pageStore)(obs
 
     return (
         <Header className="site-layout-background" style={{ padding: 0 }}>
-            <Menu mode="horizontal" style={localStorage.getItem("currentLanguage") == 'en' ? {float:"right"} : {float:"left"}}>
+            {/*style={localStorage.getItem("currentLanguage") == 'en' ? {float:"right"} : {float:"left"}}*/}
+            <Menu mode="horizontal" style={{float:"left"}}>
                 {/*<SubMenu key="language" icon={<SettingOutlined />} title={i18next.t("General.HeaderMenu.Languages")}>
                     <Menu.Item key="en" onClick={changeLanguage}>{i18next.t("General.HeaderMenu.English")}</Menu.Item>
                     <Menu.Item key="fa" onClick={changeLanguage}>{i18next.t("General.HeaderMenu.Farsi")}</Menu.Item>
@@ -95,6 +96,7 @@ const ContentHeader: React.FC<ContentHeaderProps> = inject(Stores.pageStore)(obs
             </Menu>
             <Modal
                 title={i18next.t("ChangePassword.Label.ChangePassword")}
+                width={800}
                 centered
                 visible={modalVisible}
                 destroyOnClose={true}
@@ -130,7 +132,7 @@ const ContentHeader: React.FC<ContentHeaderProps> = inject(Stores.pageStore)(obs
                                    },
                                    {
                                        pattern: /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/g,
-                                       message: i18next.t("Companies.Validation.Message.companyAdminUserPassword.Valid"),
+                                       message: i18next.t("Users.Validation.Message.password.Valid"),
                                    }
                                ]}>
                         <PasswordInput onChange={onNewPasswordChanged}/>
@@ -148,7 +150,7 @@ const ContentHeader: React.FC<ContentHeaderProps> = inject(Stores.pageStore)(obs
                                            if (!value || getFieldValue('newPassword') === value) {
                                                return Promise.resolve();
                                            }
-                                           return Promise.reject(new Error('The two passwords that you entered do not match!'));
+                                           return Promise.reject(new Error(i18next.t('Users.Validation.Message.confirmPassword.Valid')));
                                        },
                                    }),
                                ]}>
