@@ -22,6 +22,9 @@ import {DirectionType} from "antd/es/config-provider";
 import Register from "../../auth/register/components/Register";
 import UserList from "../../entities/Users/components/list/UserList";
 import EditUser from "../../entities/Users/components/user/EditUser";
+import ElectionCandidateTypeList from "../../entities/ElectionCandidateTypes/components/list/ElectionCandidateTypeList";
+import EditElectionCandidateType
+    from "../../entities/ElectionCandidateTypes/components/electionCandidateType/EditElectionCandidateType";
 
 const App: React.FC = () =>
 {
@@ -64,6 +67,10 @@ const App: React.FC = () =>
                                     <Route exact roles={[RoleType.admin]} path={Routes.user} component={UserList} />
                                     <Route exact roles={[RoleType.admin]} path={Routes.editUser} component={EditUser} />
                                     <Route exact roles={[RoleType.admin]} path={Routes.addUser} component={EditUser} />
+
+                                    <Route exact roles={[RoleType.admin]} path={Routes.electionCandidateType} component={ElectionCandidateTypeList} />
+                                    <Route exact roles={[RoleType.admin]} path={Routes.editElectionCandidateType} component={EditElectionCandidateType} />
+                                    <Route exact roles={[RoleType.admin]} path={Routes.addElectionCandidateType} component={EditElectionCandidateType} />
 
                                     <Route component={NotFoundPage} />
                                 </Switch>

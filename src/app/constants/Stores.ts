@@ -4,5 +4,6 @@ export default {
     authStore: 'authStore',
     customerStore: 'customerStore',
     adminStore: 'adminStore',
-    userStore: 'userStore'
+    userStore: 'userStore',
+    electionCandidateTypeStore: 'electionCandidateTypeStore'
 }

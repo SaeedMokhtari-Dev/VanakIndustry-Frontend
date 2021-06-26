@@ -19,6 +19,13 @@ export default
     apiUserList: "/api/user/list",
     apiUserActive: "/api/user/active",
 
+    apiElectionCandidateTypeAdd: "/api/election-candidate-type/add",
+    apiElectionCandidateTypeEdit: "/api/election-candidate-type/edit",
+    apiElectionCandidateTypeGet: "/api/election-candidate-type/get",
+    apiElectionCandidateTypeDetail: "/api/election-candidate-type/detail",
+    apiElectionCandidateTypeDelete: "/api/election-candidate-type/delete",
+    apiElectionCandidateTypeList: "/api/election-candidate-type/list",
+
     apiDashboardCustomerGet: "/api/dashboard/customer",
     apiDashboardSupplierGet: "/api/dashboard/supplier",
     apiDashboardAdminGet: "/api/dashboard/admin",

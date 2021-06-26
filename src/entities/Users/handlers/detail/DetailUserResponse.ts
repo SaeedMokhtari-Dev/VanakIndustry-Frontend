@@ -1,5 +1,4 @@
 import IDeserialize from "app/interfaces/deserialize";
-import UserCar from "./UserCar";
 
 export default class DetailUserResponse implements IDeserialize
 {

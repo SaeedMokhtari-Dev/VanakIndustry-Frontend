@@ -50,6 +50,7 @@ ReactDOM.render(
                       customerStore={appStore.customer}
                       adminStore={appStore.admin}
                       userStore={appStore.user}
+                      electionCandidateTypeStore={appStore.electionCandidateType}
             >
                 <App />
             </Provider>

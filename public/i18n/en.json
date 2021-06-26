@@ -188,6 +188,35 @@
   "Api.User.Registered.Successful": "selected user registered successfully",
   "Api.User.Activated.Successful": "selected user activated successfully",
 
+  "Users.Error.Get.Message": "An error has occurred while trying to get users list.",
+  "Users.Error.Detail.Message": "An error has occurred while trying to get user details.",
+  "Users.Error.Add.Message": "An error has occurred while trying to add new user.",
+  "Users.Error.Edit.Message": "An error has occurred while trying to edit user.",
+  "Users.Error.Delete.Message": "An error has occurred while trying to delete user.",
+  "Users.Error.List.Message": "An error has occurred while trying to get user list.",
+
+  "ElectionCandidateTypes.Menu.Title": "ElectionCandidateTypes",
+  "ElectionCandidateTypes.Page.Title": "ElectionCandidateTypes",
+  "ElectionCandidateTypes.Page.SubTitle": "This page is for define electionCandidateTypes",
+  "ElectionCandidateTypes.Add.HeaderText": "Add a new ElectionCandidateType",
+  "ElectionCandidateTypes.Label.key": "Id",
+  "ElectionCandidateTypes.Label.title": "title",
+
+  "ElectionCandidateTypes.Button.Register": "Save",
+  "ElectionCandidateTypes.Button.Cancel": "Cancel",
+
+  "ElectionCandidateTypes.Validation.Message.title.Required": "Please enter title",
+
+  "Api.ElectionCandidateType.Add.Successful": "A new electionCandidateType added successfully",
+  "Api.ElectionCandidateType.Edit.Successful": "selected electionCandidateType edited successfully",
+  "Api.ElectionCandidateType.Deleted.Successful": "selected electionCandidateType deleted successfully",
+
+  "ElectionCandidateTypes.Error.Get.Message": "An error has occurred while trying to get electionCandidateTypes list.",
+  "ElectionCandidateTypes.Error.Detail.Message": "An error has occurred while trying to get electionCandidateType details.",
+  "ElectionCandidateTypes.Error.Add.Message": "An error has occurred while trying to add new electionCandidateType.",
+  "ElectionCandidateTypes.Error.Edit.Message": "An error has occurred while trying to edit electionCandidateType.",
+  "ElectionCandidateTypes.Error.Delete.Message": "An error has occurred while trying to delete electionCandidateType.",
+  "ElectionCandidateTypes.Error.List.Message": "An error has occurred while trying to get electionCandidateType list.",
 
 
   "Companies.Menu.Title": "Companies",

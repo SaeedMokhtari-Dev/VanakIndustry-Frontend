@@ -32,14 +32,5 @@ export default class UserStore
     {
         this.editUserViewModel = null;
     }
-    onCarAddUserPageLoad()
-    {
-        this.editUserViewModel = new EditUserViewModel(this);
-    }
-
-    onCarAddUserPageUnload()
-    {
-        this.editUserViewModel = null;
-    }
 
 }

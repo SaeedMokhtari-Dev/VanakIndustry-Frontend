@@ -34,8 +34,11 @@ const Sidebar: React.FC<SidebarProps> = inject(Stores.pageStore)(observer(({page
         <Menu.Item key="app" icon={<DashboardOutlined />}>
             <Link to={Routes.app}>{i18next.t('Dashboard.Menu.Title')}</Link>
         </Menu.Item>
-        <Menu.Item key="company" icon={<HomeOutlined />}>
+        <Menu.Item key="user" icon={<HomeOutlined />}>
             <Link to={Routes.user}>{i18next.t('Users.Menu.Title')}</Link>
+        </Menu.Item>
+        <Menu.Item key="electionCandidateType" icon={<HomeOutlined />}>
+            <Link to={Routes.electionCandidateType}>{i18next.t('ElectionCandidateTypes.Menu.Title')}</Link>
         </Menu.Item>
     </Menu>)
     const customerMenu= (<Menu theme="dark" defaultSelectedKeys={['app']} mode="inline">
