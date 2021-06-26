@@ -56,8 +56,8 @@ const Sidebar: React.FC<SidebarProps> = inject(Stores.pageStore)(observer(({page
 
     return (
         <Sider collapsible collapsed={pageStore?.isSidebarCollapsed} onCollapse={toggle}>
-            <div className="logo" >
-                <img src="/images/vanak-industry-logo.png" hidden={pageStore?.isSidebarCollapsed} width={150} height={100} alt="logo"/>
+            <div>
+                <img src="/images/vanak-industry-logo.png" hidden={pageStore?.isSidebarCollapsed} style={{width: "100%", height: "100%"}} alt="logo"/>
             </div>
             {UserContext.info.roles.includes(RoleType.user) ? customerMenu : ""}
             {UserContext.info.roles.includes(RoleType.admin) ? adminMenu : ""}

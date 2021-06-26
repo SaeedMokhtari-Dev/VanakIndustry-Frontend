@@ -1,52 +1,48 @@
 import {makeAutoObservable} from "mobx";
 import i18next from "i18next";
 import log from "loglevel";
-import {message} from "antd";
-import GetCustomerRequest from "../handlers/get/GetCustomerRequest";
-import GetCustomerHandler from "../handlers/get/GetCustomerHandler";
 import CustomerStore from "../stores/CustomerStore";
-import CompanyBranchItem from "../handlers/get/CompanyBranchItem";
-import CompanySubscriptionItem from "../handlers/get/CompanySubscriptionItem";
 import {getLocalizedString} from "../../app/utils/Localization";
+import DetailUserRequest from "../../entities/Users/handlers/detail/DetailUserRequest";
+import DetailUserHandler from "../../entities/Users/handlers/detail/DetailUserHandler";
+import DetailUserResponse from "../../entities/Users/handlers/detail/DetailUserResponse";
 
 export default class GetCustomerViewModel {
     isProcessing: boolean;
     errorMessage: string;
 
-    getCustomerRequest: GetCustomerRequest;
-
-    companyBranchItems: CompanyBranchItem[];
-    companySubscriptionItems: CompanySubscriptionItem[];
-    totalCustomerBalance: number;
-    totalCarBalance: number;
-    totalBranchBalance: number;
-
+    detailUserResponse: DetailUserResponse = new DetailUserResponse();
     constructor(public customerStore: CustomerStore) {
         makeAutoObservable(this);
 
     }
-
-    public async getDashboardData(getCustomerRequest: GetCustomerRequest) {
-        try {
+    public async getDetailUser(userId: number)
+    {
+        try
+        {
+            this.errorMessage = "";
             this.isProcessing = true;
-            let response = await GetCustomerHandler.get(getCustomerRequest);
 
-            if (response && response.success) {
-                let result = response.data;
-                this.companyBranchItems = [];
-                this.companyBranchItems = result.companyBranchItems;
-                this.companySubscriptionItems = [];
-                this.companySubscriptionItems = result.companySubscriptionItems;
-                this.totalCarBalance = result.totalCarBalance;
-                this.totalBranchBalance = result.totalBranchBalance;
-                this.totalCustomerBalance = result.totalCustomerBalance;
-            } else {
+            let request = new DetailUserRequest(userId);
+            let response = await DetailUserHandler.detail(request);
+
+            if(response && response.success)
+            {
+                this.detailUserResponse = new DetailUserResponse().deserialize(response.data);
+
+                return this.detailUserResponse;
+            }
+            else{
                 this.errorMessage = getLocalizedString(response.message);
             }
-        } catch (e) {
-            this.errorMessage = i18next.t('Customers.Error.Get.Message');
+        }
+        catch(e)
+        {
+            this.errorMessage = i18next.t('Users.Error.Detail.Message');
             log.error(e);
-        } finally {
+        }
+        finally
+        {
             this.isProcessing = false;
         }
     }

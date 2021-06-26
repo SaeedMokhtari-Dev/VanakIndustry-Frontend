@@ -4,11 +4,9 @@ import Stores from "app/constants/Stores";
 import CustomerStore from "../../stores/CustomerStore";
 import i18next from "i18next";
 import UserContext from "../../../identity/contexts/UserContext";
-import GetCustomerRequest from "../../handlers/get/GetCustomerRequest";
-import {Badge, Col, Descriptions, Divider, Row, Spin, Table} from "antd";
-import CompanySubscriptionItemColumns from "./CompanySubscriptionItemColumns";
-import CompanyBranchItemColumns from "./CompanyBranchItemColumns";
-import {CheckOutlined, ClockCircleOutlined} from "@ant-design/icons";
+import {Badge, Col, Descriptions, Divider, Image, Row, Spin, Table} from "antd";
+import {CheckOutlined, ClockCircleOutlined, CloseOutlined} from "@ant-design/icons";
+import ImageConstants from "../../../app/constants/ImageConstants";
 
 interface DashboardProps {
     customerStore?: CustomerStore
@@ -17,22 +15,6 @@ interface DashboardProps {
 const CustomerDashboard: React.FC<DashboardProps> = inject(Stores.customerStore)(observer(({customerStore}) =>
 {
     const [dataFetched, setDataFetched] = React.useState(false);
-    CompanySubscriptionItemColumns.forEach(w => {
-        w.title = i18next.t(w.title);
-        if(w.key === "alarm"){
-            w["render"] = (w) => {
-                return  w ? <Badge count={<ClockCircleOutlined style={{ color: '#f5222d' }} />} /> : "";
-            }
-        }
-    });
-
-    const subscriptionColumns: any[] = [...CompanySubscriptionItemColumns];
-
-    CompanyBranchItemColumns.forEach(w => {
-        w.title = i18next.t(w.title);
-    });
-
-    const branchColumns: any[] = [...CompanyBranchItemColumns];
 
     useEffect(() => {
         onLoad();
@@ -41,10 +23,9 @@ const CustomerDashboard: React.FC<DashboardProps> = inject(Stores.customerStore)
     }, []);
 
     async function onLoad() {
+        debugger;
         customerStore.onCustomerGetPageLoad();
-        customerStore.getCustomerViewModel.getCustomerRequest = new GetCustomerRequest();
-        customerStore.getCustomerViewModel.getCustomerRequest.companyId = UserContext.info.id;
-        await customerStore.getCustomerViewModel.getDashboardData(customerStore.getCustomerViewModel.getCustomerRequest);
+        await customerStore.getCustomerViewModel.getDetailUser(UserContext.info.id);
 
         setDataFetched(true);
     }
@@ -61,22 +42,82 @@ const CustomerDashboard: React.FC<DashboardProps> = inject(Stores.customerStore)
         <div>
         {dataFetched ?
             <div>
-                <Descriptions title={i18next.t("CustomerDashboard.Title")} bordered>
-                    <Descriptions.Item label={i18next.t("CustomerDashboard.TotalCustomerBalance")}>{viewModel?.totalCustomerBalance?.toLocaleString()}</Descriptions.Item>
+                <h3>{i18next.t("Dashboard.Customer.Title")}</h3>
+                <Divider>{i18next.t("Users.Section.CertificateInformation")}</Divider>
+                <Row>
+                    <Col span={4}>
+                        <Image style={{maxHeight: "200px"}} src={viewModel.detailUserResponse.pictureImage} fallback={ImageConstants.fallbackImage}></Image>
+                    </Col>
+                    <Col span={20}>
+                <Descriptions style={{width: "100%"}} bordered>
+                    <Descriptions.Item label={i18next.t("Users.Label.firstName")}>{viewModel.detailUserResponse.firstName}</Descriptions.Item>
+                    <Descriptions.Item label={i18next.t("Users.Label.lastName")}>{viewModel.detailUserResponse.lastName}</Descriptions.Item>
+                    <Descriptions.Item label={i18next.t("Users.Label.nickName")}>{viewModel.detailUserResponse.nickName}</Descriptions.Item>
+                    <Descriptions.Item label={i18next.t("Users.Label.nationalId")}>{viewModel.detailUserResponse.nationalId}</Descriptions.Item>
+                    <Descriptions.Item label={i18next.t("Users.Label.certificateId")}>{viewModel.detailUserResponse.certificateId}</Descriptions.Item>
+                    <Descriptions.Item label={i18next.t("Users.Label.fatherName")}>{viewModel.detailUserResponse.fatherName}</Descriptions.Item>
+                    <Descriptions.Item label={i18next.t("Users.Label.motherName")}>{viewModel.detailUserResponse.motherName}</Descriptions.Item>
+                    <Descriptions.Item label={i18next.t("Users.Label.birthDate")}>{viewModel.detailUserResponse.birthDate}</Descriptions.Item>
+                    {/*<Descriptions.Item label={i18next.t("CustomerDashboard.TotalCustomerBalance")}>{viewModel?.totalCustomerBalance?.toLocaleString()}</Descriptions.Item>
                     <Descriptions.Item label={i18next.t("CustomerDashboard.TotalBranchBalance")}>{viewModel?.totalBranchBalance?.toLocaleString()}</Descriptions.Item>
-                    <Descriptions.Item label={i18next.t("CustomerDashboard.TotalCarBalance")}>{viewModel?.totalCarBalance?.toLocaleString()}</Descriptions.Item>
+                    <Descriptions.Item label={i18next.t("CustomerDashboard.TotalCarBalance")}>{viewModel?.totalCarBalance?.toLocaleString()}</Descriptions.Item>*/}
                 </Descriptions>
-                <br />
-                <Divider>{i18next.t("CustomerDashboard.Section.BranchesBalance")}</Divider>
-                <br/>
-                <Table dataSource={viewModel?.companyBranchItems} columns={branchColumns} loading={viewModel?.isProcessing}
-                       bordered={true} pagination={false} />
-                <br/>
-                <Divider>{i18next.t("CustomerDashboard.Section.Subscriptions")}</Divider>
-                <br/>
-                <Table dataSource={viewModel?.companySubscriptionItems} columns={subscriptionColumns} loading={viewModel?.isProcessing}
-                       bordered={true} pagination={false}/>
-                <br/>
+                    </Col>
+                </Row>
+                <Divider>{i18next.t("Users.Section.AddressInformation")}</Divider>
+                <Descriptions style={{width: "100%"}} bordered>
+                    <Descriptions.Item label={i18next.t("Users.Label.phoneNumber")}>{viewModel.detailUserResponse.phoneNumber}</Descriptions.Item>
+                    <Descriptions.Item label={i18next.t("Users.Label.mobile")}>{viewModel.detailUserResponse.mobile}</Descriptions.Item>
+                    <Descriptions.Item label={i18next.t("Users.Label.postalCode")}>{viewModel.detailUserResponse.postalCode}</Descriptions.Item>
+                    <Descriptions.Item label={i18next.t("Users.Label.address")}>{viewModel.detailUserResponse.address}</Descriptions.Item>
+                </Descriptions>
+                <Divider>{i18next.t("Users.Section.MembershipInformation")}</Divider>
+                <Descriptions style={{width: "100%"}} bordered>
+                    <Descriptions.Item label={i18next.t("Users.Label.barcode")}>{viewModel.detailUserResponse.barcode ?? " "}</Descriptions.Item>
+                    <Descriptions.Item label={i18next.t("Users.Label.cardImage")}>
+                        <Image width={100} height={100} src={viewModel.detailUserResponse.cardImage} fallback={ImageConstants.fallbackImage}></Image>
+                    </Descriptions.Item>
+                </Descriptions>
+                <Divider>{i18next.t("Users.Section.MarriedInformation")}</Divider>
+                <Descriptions style={{width: "100%"}} bordered>
+                    <Descriptions.Item label={i18next.t("Users.Label.married")}>{viewModel.detailUserResponse.married ? "متاهل" : "مجرد"}</Descriptions.Item>
+                    <Descriptions.Item label={i18next.t("Users.Label.secondPageCertificateImage")}>
+                        <Image width={100} height={100} src={viewModel.detailUserResponse.secondPageCertificateImage} fallback={ImageConstants.fallbackImage}></Image>
+                    </Descriptions.Item>
+                </Descriptions>
+                <Divider>{i18next.t("Users.Section.EducationInformation")}</Divider>
+                <Descriptions style={{width: "100%"}} bordered>
+                    <Descriptions.Item label={i18next.t("Users.Label.qualification")}>{i18next.t("General.Qualification." + viewModel.detailUserResponse.qualification)}</Descriptions.Item>
+                    <Descriptions.Item label={i18next.t("Users.Label.fieldOfStudy")}>{viewModel.detailUserResponse.fieldOfStudy}</Descriptions.Item>
+                    <Descriptions.Item label={i18next.t("Users.Label.skillDescription")}>{viewModel.detailUserResponse.skillDescription}</Descriptions.Item>
+                </Descriptions>
+                <Divider>{i18next.t("Users.Section.Uploads")}</Divider>
+                <Descriptions style={{width: "100%"}} bordered>
+                    <Descriptions.Item label={i18next.t("Users.Label.nationalCardImage")}>
+                        <Image width={100} height={100} src={viewModel.detailUserResponse.nationalCardImage} fallback={ImageConstants.fallbackImage}></Image>
+                    </Descriptions.Item>
+                    <Descriptions.Item label={i18next.t("Users.Label.firstPageCertificateImage")}>
+                        <Image width={100} height={100} src={viewModel.detailUserResponse.firstPageCertificateImage} fallback={ImageConstants.fallbackImage}></Image>
+                    </Descriptions.Item>
+                </Descriptions>
+                {viewModel.detailUserResponse.candidatePictureImage &&
+                    <React.Fragment>
+                <Divider>{i18next.t("Users.Section.CandidateInformation")}</Divider>
+                    <Descriptions style={{width: "100%"}} bordered>
+                    <Descriptions.Item label={i18next.t("Users.Label.candidatePictureImage")}>
+                    <Image width={100} height={100} src={viewModel.detailUserResponse.candidatePictureImage} fallback={ImageConstants.fallbackImage}></Image>
+                    </Descriptions.Item>
+                    <Descriptions.Item label={i18next.t("Users.Label.firstPageCertificateImage")}>
+                    <Image width={100} height={100} src={viewModel.detailUserResponse.firstPageCertificateImage} fallback={ImageConstants.fallbackImage}></Image>
+                    </Descriptions.Item>
+                    </Descriptions>
+                    </React.Fragment>
+                }
+                <Divider>{i18next.t("Users.Section.Description")}</Divider>
+                <Descriptions style={{width: "100%"}} bordered>
+                    <Descriptions.Item label={i18next.t("Users.Label.moreDescription")}>{viewModel.detailUserResponse.moreDescription}</Descriptions.Item>
+                </Descriptions>
+
             </div>
                 :
                 <Row gutter={[24, 16]}>
