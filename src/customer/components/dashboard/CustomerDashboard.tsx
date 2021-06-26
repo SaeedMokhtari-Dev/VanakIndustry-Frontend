@@ -1,12 +1,14 @@
 import React, {useEffect} from 'react';
 import {inject, observer} from "mobx-react";
+import { Link } from "react-router-dom";
 import Stores from "app/constants/Stores";
 import CustomerStore from "../../stores/CustomerStore";
 import i18next from "i18next";
 import UserContext from "../../../identity/contexts/UserContext";
-import {Badge, Col, Descriptions, Divider, Image, Row, Spin, Table} from "antd";
-import {CheckOutlined, ClockCircleOutlined, CloseOutlined} from "@ant-design/icons";
+import {Badge, Button, Col, Descriptions, Divider, Image, Row, Spin, Table} from "antd";
+import {CheckOutlined, ClockCircleOutlined, CloseOutlined, EditOutlined} from "@ant-design/icons";
 import ImageConstants from "../../../app/constants/ImageConstants";
+import {getEditElectionCandidateTypeRoute, getEditUserRoute} from "../../../app/utils/RouteHelper";
 
 interface DashboardProps {
     customerStore?: CustomerStore
@@ -42,7 +44,13 @@ const CustomerDashboard: React.FC<DashboardProps> = inject(Stores.customerStore)
         <div>
         {dataFetched ?
             <div>
-                <h3>{i18next.t("Dashboard.Customer.Title")}</h3>
+                <h3>
+                    {i18next.t("Dashboard.Customer.Title")}
+                    <Link to={getEditUserRoute(UserContext.info.id)}>
+                        <Button type="primary" icon={<EditOutlined/>}
+                                title={i18next.t("General.Button.Edit")}/>
+                    </Link>
+                </h3>
                 <Divider>{i18next.t("Users.Section.CertificateInformation")}</Divider>
                 <Row>
                     <Col span={4}>
@@ -106,9 +114,6 @@ const CustomerDashboard: React.FC<DashboardProps> = inject(Stores.customerStore)
                     <Descriptions style={{width: "100%"}} bordered>
                     <Descriptions.Item label={i18next.t("Users.Label.candidatePictureImage")}>
                     <Image width={100} height={100} src={viewModel.detailUserResponse.candidatePictureImage} fallback={ImageConstants.fallbackImage}></Image>
-                    </Descriptions.Item>
-                    <Descriptions.Item label={i18next.t("Users.Label.firstPageCertificateImage")}>
-                    <Image width={100} height={100} src={viewModel.detailUserResponse.firstPageCertificateImage} fallback={ImageConstants.fallbackImage}></Image>
                     </Descriptions.Item>
                     </Descriptions>
                     </React.Fragment>

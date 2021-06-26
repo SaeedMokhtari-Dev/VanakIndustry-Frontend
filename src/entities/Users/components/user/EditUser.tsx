@@ -23,6 +23,7 @@ import MaskedInput from "antd-mask-input";
 import {PasswordInput} from "antd-password-input-strength";
 import {findAllInRenderedTree} from "react-dom/test-utils";
 import ImageConstants from "../../../../app/constants/ImageConstants";
+import NavigationService from "../../../../app/services/NavigationService";
 const {useEffect} = React;
 const { RangePicker } = DatePicker;
 const { Option } = Select;
@@ -69,6 +70,8 @@ const EditUser: React.FC<EditUserProps> = inject(Stores.userStore)(observer(({us
         if(userIdParam)
         {
             await userStore.editUserViewModel.getDetailUser(userIdParam);
+            if(userStore.editUserViewModel.errorMessage)
+                NavigationService.goBack();
             setMarried(userStore.editUserViewModel.detailUserResponse.married);
             userStore.editUserViewModel.editUserRequest.userId = userIdParam;
         }
