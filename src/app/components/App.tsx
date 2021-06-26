@@ -16,12 +16,12 @@ import ProtectedRedirectRoute from "app/components/routes/ProtectedRedirectRoute
 import Page from "page/components/Page";
 import RoleType from "identity/constants/RoleType";
 import Dashboard from "app/components/common/Dashboard";
-import EditCompany from "entities/companies/components/company/EditCompany";
-import CompaniesList from "../../entities/companies/components/list/CompaniesList";
 import en_US from 'antd/lib/locale/en_US';
 import fa_IR from 'antd/lib/locale/fa_IR';
 import {DirectionType} from "antd/es/config-provider";
 import Register from "../../auth/register/components/Register";
+import UserList from "../../entities/Users/components/list/UserList";
+import EditUser from "../../entities/Users/components/user/EditUser";
 
 const App: React.FC = () =>
 {
@@ -61,9 +61,9 @@ const App: React.FC = () =>
                                     <Route exact path={Routes.app} component={Dashboard} />
 
                                     {/* Entities */}
-                                    <Route exact roles={[RoleType.admin]} path={Routes.company} component={CompaniesList} />
-                                    <Route exact roles={[RoleType.admin]} path={Routes.editCompany} component={EditCompany} />
-                                    <Route exact roles={[RoleType.admin]} path={Routes.addCompany} component={EditCompany} />
+                                    <Route exact roles={[RoleType.admin]} path={Routes.user} component={UserList} />
+                                    <Route exact roles={[RoleType.admin]} path={Routes.editUser} component={EditUser} />
+                                    <Route exact roles={[RoleType.admin]} path={Routes.addUser} component={EditUser} />
 
                                     <Route component={NotFoundPage} />
                                 </Switch>

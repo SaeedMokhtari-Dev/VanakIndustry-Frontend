@@ -35,7 +35,7 @@ const Sidebar: React.FC<SidebarProps> = inject(Stores.pageStore)(observer(({page
             <Link to={Routes.app}>{i18next.t('Dashboard.Menu.Title')}</Link>
         </Menu.Item>
         <Menu.Item key="company" icon={<HomeOutlined />}>
-            <Link to={Routes.company}>{i18next.t('Companies.Menu.Title')}</Link>
+            <Link to={Routes.user}>{i18next.t('Users.Menu.Title')}</Link>
         </Menu.Item>
     </Menu>)
     const customerMenu= (<Menu theme="dark" defaultSelectedKeys={['app']} mode="inline">

@@ -1,6 +1,6 @@
 import Routes from "app/constants/Routes";
 
-export function getCompanyRoute(companyId: any = null): string
+export function getEditUserRoute(userId: number = null): string
 {
-    return Routes.company.replace('/:companyId?', companyId ? `/${companyId}` : '');
+    return Routes.editUser.replace('/:userId', userId ? `/${userId}` : '');
 }

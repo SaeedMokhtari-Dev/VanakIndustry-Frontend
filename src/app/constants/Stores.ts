@@ -3,7 +3,6 @@ export default {
     pageStore: 'pageStore',
     authStore: 'authStore',
     customerStore: 'customerStore',
-    supplierStore: 'supplierStore',
     adminStore: 'adminStore',
-    companiesStore: 'companiesStore'
+    userStore: 'userStore'
 }

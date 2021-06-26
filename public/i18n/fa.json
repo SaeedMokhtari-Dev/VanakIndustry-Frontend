@@ -95,6 +95,8 @@
   "Api.MinPasswordLengthError": "حداقل کلمه عبور معتبر 8 کاراکتر دارد شامل حداقل یک عدد، حرف بزرگ، کلمه کوچک و یک کارکتر خاص (@، !، # و ...)",
   "Api.Username.Duplicate": "این نام کاربری قبلا انتخاب شده است، لطفا نام کاربری دیگری انتخاب نمائید.",
   "Api.Email.Duplicate": "این ایمیل قبلا انتخاب شده است، لطفا ایمیل دیگری انتخاب نمائید.",
+  "Api.NationalId.Duplicate": "این کدملی قبلا انتخاب شده است، لطفا کدملی دیگری انتخاب نمائید.",
+  "Api.Barcode.Duplicate": "این بارکد قبلا انتخاب شده است، لطفا بارکد دیگری انتخاب نمائید.",
   "Api.NotEnoughBalance": "Balance is not enough, please charge your balance then try again.",
   "Api.Validate.IdRequired": "کد اجباریست",
 
@@ -102,6 +104,9 @@
   "Users.Menu.Title": "کاربران",
   "Users.Page.Title": "کاربران",
   "Users.Page.SubTitle": "این صفحه برای تعریف کاربران است",
+  "Users.Add.HeaderText": "ایجاد کاربر جدید",
+  "Users.Edit.HeaderText": "ویرایش کاربر",
+  "Users.Label.key": "شناسه",
   "Users.Label.firstName": "نام",
   "Users.Label.lastName": "نام خانوادگی",
   "Users.Label.nationalId": "کدملی",
@@ -129,9 +134,13 @@
   "Users.Label.moreDescription": "توضیحات بیشتر",
   "Users.Label.email": "ایمیل",
   "Users.Label.candidatePictureImage": "تصویر کاندید",
+  "Users.Label.isActive": "فعال؟",
+  "Users.Label.createdAt": "تاریخ ایجاد",
+  "Users.Label.barcode": "بارکد",
 
   "Users.Button.Register": "ذخیره",
   "Users.Button.Cancel": "انصراف",
+  "Users.Button.Accept": "تایید",
   "Users.Section.CertificateInformation": "اطلاعات شناسنامه ای",
   "Users.Section.AddressInformation": "اطلاعات تماس",
   "Users.Section.AuthenticationInformation": "اطلاعات حساب کاربری",
@@ -139,6 +148,8 @@
   "Users.Section.EducationInformation": "اطلاعات تحصیلی",
   "Users.Section.Uploads": "آپلود ها",
   "Users.Section.Description": "توضیحات",
+  "Users.Section.MembershipInformation": "اطلاعات عضویتی",
+  "Users.Section.CandidateInformation": "اطلاعات کاندیداتوری",
 
   "Users.Validation.Message.firstName.Required": "لطفا نام را وارد نمائید.",
   "Users.Validation.Message.lastName.Required": "لطفا نام خانوادگی را وارد نمائید.",
@@ -166,6 +177,12 @@
   "Users.Validation.Message.motherName.Required": "لطفا نام مادر را وارد نمائید.",
   "Users.Validation.Message.certificateId.Required": "لطفا شماره شناسنامه را وارد نمائید.",
   "Users.Validation.Message.email.Required": "لطفا ایمیل را وارد نمائید.",
+
+  "Api.User.Add.Successful": "کاربر جدید با موفقیت ثبت شد.",
+  "Api.User.Edit.Successful": "کاربر انتخاب شده با موفقیت ویرایش شد.",
+  "Api.User.Deleted.Successful": "کاربر انتخاب شده با موفقیت حذف شد.",
+  "Api.User.Register.Successful": "ثبت نام با موفقیت انجام شد.",
+  "Api.User.Activated.Successful": "کاربر انتخاب شده با موفقیت فعال شد.",
 
 
   "Companies.Menu.Title": "Companies",

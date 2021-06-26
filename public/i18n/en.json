@@ -103,12 +103,16 @@
   "Api.MinPasswordLengthError": "The minimum password length is 8 characters and must have at least a number, upper, lower and special character",
   "Api.Username.Duplicate": "There has already used this username, please choose another username.",
   "Api.Email.Duplicate": "There has already used this email, please choose another email.",
+  "Api.NationalId.Duplicate": "There has already used this nationalId, please choose another nationalId.",
+  "Api.Barcode.Duplicate": "There has already used this Barcode, please choose another Barcode.",
   "Api.NotEnoughBalance": "Balance is not enough, please charge your balance then try again.",
   "Api.Validate.IdRequired": "Id is Required",
 
   "Users.Menu.Title": "Users",
   "Users.Page.Title": "Users",
   "Users.Page.SubTitle": "This page is for define users",
+  "Users.Add.HeaderText": "Add a new User",
+  "Users.Label.key": "Id",
   "Users.Label.firstName": "firstName",
   "Users.Label.lastName": "lastName",
   "Users.Label.nationalId": "nationalId",
@@ -135,9 +139,13 @@
   "Users.Label.moreDescription": "moreDescription",
   "Users.Label.email": "email",
   "Users.Label.candidatePictureImage": "candidatePictureImage",
+  "Users.Label.isActive": "isActive",
+  "Users.Label.createdAt": "createdAt",
+  "Users.Label.barcode": "barcode",
 
   "Users.Button.Register": "Save",
   "Users.Button.Cancel": "Cancel",
+  "Users.Button.Accept": "Accept",
   "Users.Section.CertificateInformation": "CertificateInformation",
   "Users.Section.AddressInformation": "AddressInformation",
   "Users.Section.AuthenticationInformation": "AuthenticationInformation",
@@ -145,6 +153,7 @@
   "Users.Section.EducationInformation": "EducationInformation",
   "Users.Section.Uploads": "Uploads",
   "Users.Section.Description": "Description",
+  "Users.Section.MembershipInformation": "Membership",
 
   "Users.Validation.Message.firstName.Required": "Please enter firstName",
   "Users.Validation.Message.lastName.Required": "Please enter lastName",
@@ -172,6 +181,13 @@
   "Users.Validation.Message.motherName.Required": "Please enter motherName",
   "Users.Validation.Message.certificateId.Required": "Please enter certificateId",
   "Users.Validation.Message.email.Required": "Please enter email",
+
+  "Api.User.Add.Successful": "A new user added successfully",
+  "Api.User.Edit.Successful": "selected user edited successfully",
+  "Api.User.Deleted.Successful": "selected user deleted successfully",
+  "Api.User.Registered.Successful": "selected user registered successfully",
+  "Api.User.Activated.Successful": "selected user activated successfully",
+
 
 
   "Companies.Menu.Title": "Companies",

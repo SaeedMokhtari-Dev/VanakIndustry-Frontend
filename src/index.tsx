@@ -49,7 +49,7 @@ ReactDOM.render(
                       pageStore={appStore.page}
                       customerStore={appStore.customer}
                       adminStore={appStore.admin}
-                      companiesStore={appStore.companies}
+                      userStore={appStore.user}
             >
                 <App />
             </Provider>

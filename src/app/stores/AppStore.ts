@@ -1,8 +1,8 @@
 import AuthStore from "auth/stores/AuthStore";
 import PageStore from "page/stores/PageStore";
 import AdminStore from "admin/stores/AdminStore";
-import CompaniesStore from "entities/companies/stores/CompaniesStore";
 import CustomerStore from "../../customer/stores/CustomerStore";
+import UserStore from "../../entities/Users/stores/UserStore";
 
 export class AppStore
 {
@@ -10,7 +10,7 @@ export class AppStore
     page: PageStore;
     customer: CustomerStore;
     admin: AdminStore;
-    companies: CompaniesStore;
+    user: UserStore;
 
     constructor()
     {
@@ -18,6 +18,6 @@ export class AppStore
         this.page = new PageStore(this);
         this.customer = new CustomerStore(this);
         this.admin = new AdminStore(this);
-        this.companies = new CompaniesStore(this);
+        this.user = new UserStore(this);
     }
 }

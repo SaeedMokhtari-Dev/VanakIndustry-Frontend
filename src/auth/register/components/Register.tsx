@@ -15,6 +15,7 @@ import persianMoment from 'jalali-moment';
 import GlobalRegex from "../../../app/constants/GlobalRegex";
 import Routes from "../../../app/constants/Routes";
 import NavigationService from "../../../app/services/NavigationService";
+import Stores from 'app/constants/Stores';
 
 
 const { Option } = Select;
@@ -23,7 +24,7 @@ interface RegisterProps {
     authStore?: AuthStore
 }
 
-const Register: React.FC<RegisterProps> = inject('authStore')(observer(({authStore}) =>
+const Register: React.FC<RegisterProps> = inject(Stores.authStore)(observer(({authStore}) =>
 {
     const [married, setMarried] = React.useState(false);
     const [dateBirthDateValid, setDateBirthDateValid] = React.useState(true);
@@ -264,6 +265,7 @@ const Register: React.FC<RegisterProps> = inject('authStore')(observer(({authSto
                                                    {
                                                        validator: checkDateValidation
                                                    }
+
                                                ]}>
                                         {/*<Input onChange={onChanged}/>*/}
                                         <MaskedInput className={"phone-number"} mask="1111/11/11" onChange={onMaskChanged}/>

@@ -10,8 +10,8 @@ export default
     app: "/app",
 
     // Admin
-    // Company
-    company: "/app/company",
-    editCompany: "/app/company/edit/:companyId",
-    addCompany: "/app/company/add"
+    // User
+    user: "/app/user",
+    editUser: "/app/user/edit/:userId",
+    addUser: "/app/user/add"
 }
