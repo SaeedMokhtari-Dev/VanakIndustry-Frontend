@@ -21,10 +21,13 @@ import fa_IR from 'antd/lib/locale/fa_IR';
 import {DirectionType} from "antd/es/config-provider";
 import Register from "../../auth/register/components/Register";
 import UserList from "../../entities/Users/components/list/UserList";
-import EditUser from "../../entities/Users/components/user/EditUser";
 import ElectionCandidateTypeList from "../../entities/ElectionCandidateTypes/components/list/ElectionCandidateTypeList";
-import EditElectionCandidateType
-    from "../../entities/ElectionCandidateTypes/components/electionCandidateType/EditElectionCandidateType";
+import EditUser from "../../entities/Users/components/edit/EditUser";
+import EditElectionCandidateType from "../../entities/ElectionCandidateTypes/components/edit/EditElectionCandidateType";
+import ElectionList from "../../entities/Elections/components/list/ElectionList";
+import EditElection from "../../entities/Elections/components/edit/EditElection";
+import AddCandidateElection from "../../entities/Elections/components/addCandidate/AddCandidateElection";
+
 
 const App: React.FC = () =>
 {
@@ -71,6 +74,11 @@ const App: React.FC = () =>
                                     <Route exact roles={[RoleType.admin]} path={Routes.electionCandidateType} component={ElectionCandidateTypeList} />
                                     <Route exact roles={[RoleType.admin]} path={Routes.editElectionCandidateType} component={EditElectionCandidateType} />
                                     <Route exact roles={[RoleType.admin]} path={Routes.addElectionCandidateType} component={EditElectionCandidateType} />
+
+                                    <Route exact roles={[RoleType.admin]} path={Routes.election} component={ElectionList} />
+                                    <Route exact roles={[RoleType.admin]} path={Routes.editElection} component={EditElection} />
+                                    <Route exact roles={[RoleType.admin]} path={Routes.addElection} component={EditElection} />
+                                    <Route exact roles={[RoleType.admin]} path={Routes.addCandidateElection} component={AddCandidateElection} />
 
                                     <Route component={NotFoundPage} />
                                 </Switch>

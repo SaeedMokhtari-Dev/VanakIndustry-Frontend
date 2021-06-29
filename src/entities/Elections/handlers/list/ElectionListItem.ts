@@ -1,11 +1,10 @@
 import IDeserialize from "../../../../app/interfaces/deserialize";
 import {makeAutoObservable} from "mobx";
 
-export default class UserListItem implements IDeserialize
+export default class ElectionListItem implements IDeserialize
 {
     key: number;
-    fullName: string;
-    nationalId: string;
+    title: string;
 
     constructor() {
         makeAutoObservable(this);

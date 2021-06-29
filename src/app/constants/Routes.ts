@@ -17,5 +17,10 @@ export default
     // ElectionCandidateType
     electionCandidateType: "/app/electionCandidateType",
     editElectionCandidateType: "/app/electionCandidateType/edit/:electionCandidateTypeId",
-    addElectionCandidateType: "/app/electionCandidateType/add"
+    addElectionCandidateType: "/app/electionCandidateType/add",
+    // Election
+    election: "/app/election",
+    editElection: "/app/election/edit/:electionId",
+    addCandidateElection: "/app/election/addCandidate/:electionId/:electionCandidateTypeId",
+    addElection: "/app/election/add"
 }

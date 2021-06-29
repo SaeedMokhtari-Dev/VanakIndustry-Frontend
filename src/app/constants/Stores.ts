@@ -5,5 +5,6 @@ export default {
     customerStore: 'customerStore',
     adminStore: 'adminStore',
     userStore: 'userStore',
-    electionCandidateTypeStore: 'electionCandidateTypeStore'
+    electionCandidateTypeStore: 'electionCandidateTypeStore',
+    electionStore: 'electionStore'
 }

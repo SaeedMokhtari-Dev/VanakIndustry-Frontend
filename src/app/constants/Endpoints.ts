@@ -26,6 +26,14 @@ export default
     apiElectionCandidateTypeDelete: "/api/election-candidate-type/delete",
     apiElectionCandidateTypeList: "/api/election-candidate-type/list",
 
+    apiElectionAdd: "/api/election/add",
+    apiElectionEdit: "/api/election/edit",
+    apiElectionGet: "/api/election/get",
+    apiElectionDetail: "/api/election/detail",
+    apiElectionDelete: "/api/election/delete",
+    apiElectionAddCandidate: "/api/election/add-candidate",
+    apiElectionList: "/api/election/list",
+
     apiDashboardCustomerGet: "/api/dashboard/customer",
     apiDashboardSupplierGet: "/api/dashboard/supplier",
     apiDashboardAdminGet: "/api/dashboard/admin",

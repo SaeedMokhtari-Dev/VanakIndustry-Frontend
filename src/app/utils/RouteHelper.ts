@@ -8,3 +8,12 @@ export function getEditElectionCandidateTypeRoute(electionCandidateTypeId: numbe
 {
     return Routes.editElectionCandidateType.replace('/:electionCandidateTypeId', electionCandidateTypeId ? `/${electionCandidateTypeId}` : '');
 }
+export function getEditElectionRoute(electionId: number = null): string
+{
+    return Routes.editElection.replace('/:electionId', electionId ? `/${electionId}` : '');
+}
+export function getAddCandidateElectionRoute(electionId: number = null, electionCandidateTypeId: number = null): string
+{
+    return Routes.addCandidateElection.replace('/:electionId', electionId ? `/${electionId}` : '')
+        .replace('/:electionCandidateTypeId', electionCandidateTypeId ? `/${electionCandidateTypeId}` : '');
+}

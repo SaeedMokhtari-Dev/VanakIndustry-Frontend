@@ -219,6 +219,53 @@
   "ElectionCandidateTypes.Error.List.Message": "An error has occurred while trying to get electionCandidateType list.",
 
 
+  "Elections.Menu.Title": "Elections",
+  "Elections.Page.Title": "Elections",
+  "Elections.Page.SubTitle": "This page is for define elections",
+  "Elections.Add.HeaderText": "Add a new Election",
+  "Elections.Edit.HeaderText": "Edit Election",
+  "Elections.Label.key": "key",
+  "Elections.Label.title": "title",
+  "Elections.Label.startDate": "startDate",
+  "Elections.Label.endDate": "endDate",
+  "Elections.Label.iplimit": "iplimit",
+  "Elections.Label.iplist": "iplist",
+  "Elections.Label.finalize": "finalize",
+  "Elections.Label.finalizeDate": "finalizeDate",
+  "Elections.Label.electionCandidateTypeId": "electionCandidateTypeId",
+  "Elections.Label.limitCount": "limitCount",
+
+  "Elections.AddCandidate.HeaderText": "AddCandidate",
+  "Elections.Candidates.Source.Title": "Source",
+  "Elections.Candidates.Target.Title": "Target",
+
+  "Elections.Button.Register": "Save",
+  "Elections.Button.Cancel": "Cancel",
+  "Elections.Button.NewLimit": "NewLimit",
+  "Elections.Button.AddCandidate":"AddCandidate",
+
+  "Elections.Section.Limits": "Limits",
+
+  "Elections.Validation.Message.title.Required": "Please enter title",
+  "Elections.Validation.Message.electionCandidateTypeId.Required": "Please enter electionCandidateTypeId",
+  "Elections.Validation.Message.limitCount.Required": "Please enter limitCount",
+  "Elections.Validation.Message.iplist.Required": "Please enter iplist",
+  "Elections.Validation.Message.endDate.Required": "Please enter endDate",
+  "Elections.Validation.Message.startDate.Required": "Please enter startDate",
+
+  "Api.Election.Add.Successful": "A new election added successfully",
+  "Api.Election.Edit.Successful": "selected election edited successfully",
+  "Api.Election.Deleted.Successful": "selected election deleted successfully",
+
+  "Elections.Error.Get.Message": "An error has occurred while trying to get elections list.",
+  "Elections.Error.Detail.Message": "An error has occurred while trying to get election details.",
+  "Elections.Error.Add.Message": "An error has occurred while trying to add new election.",
+  "Elections.Error.Edit.Message": "An error has occurred while trying to edit election.",
+  "Elections.Error.Delete.Message": "An error has occurred while trying to delete election.",
+  "Elections.Error.List.Message": "An error has occurred while trying to get election list.",
+  "Elections.Error.AddCandidate.Message": "An error has occurred while trying to add candidates.",
+
+
   "Companies.Menu.Title": "Companies",
   "Companies.Page.Title": "Companies",
   "Companies.Page.SubTitle": "This page is for define companies",
