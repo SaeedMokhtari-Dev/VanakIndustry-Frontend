@@ -12,6 +12,10 @@ export function getEditElectionRoute(electionId: number = null): string
 {
     return Routes.editElection.replace('/:electionId', electionId ? `/${electionId}` : '');
 }
+export function getPresentElectionRoute(electionId: number = null): string
+{
+    return Routes.presentUser.replace('/:electionId', electionId ? `/${electionId}` : '');
+}
 export function getAddCandidateElectionRoute(electionId: number = null, electionCandidateTypeId: number = null): string
 {
     return Routes.addCandidateElection.replace('/:electionId', electionId ? `/${electionId}` : '')

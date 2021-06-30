@@ -14,6 +14,7 @@ export default
     user: "/app/user",
     editUser: "/app/user/edit/:userId",
     addUser: "/app/user/add",
+    presentUser: "/app/user/present/:electionId",
     // ElectionCandidateType
     electionCandidateType: "/app/electionCandidateType",
     editElectionCandidateType: "/app/electionCandidateType/edit/:electionCandidateTypeId",

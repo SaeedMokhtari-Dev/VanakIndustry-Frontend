@@ -6,8 +6,10 @@
   "General.Button.Edit": "Edit",
   "General.Button.Delete": "Delete",
   "General.Button.ExportExcel": "Excel",
+  "General.Button.Present": "Present",
   "General.Column.Action": "Actions",
   "General.Add.SaveButton": "Save",
+  "General.Add.SaveAndContinueButton": "Save And Continue",
   "General.Add.CancelButton": "Cancel",
   "General.Confirm.Delete": "Are you sure to delete?",
   "General.Confirm.Active": "Are you sure to active?",
@@ -143,6 +145,10 @@
   "Users.Label.createdAt": "createdAt",
   "Users.Label.barcode": "barcode",
 
+  "Users.Present.HeaderText": "Present Header",
+  "Users.Section.Barcode": "Barcode Section",
+
+
   "Users.Button.Register": "Save",
   "Users.Button.Cancel": "Cancel",
   "Users.Button.Accept": "Accept",
@@ -154,6 +160,7 @@
   "Users.Section.Uploads": "Uploads",
   "Users.Section.Description": "Description",
   "Users.Section.MembershipInformation": "Membership",
+  "Users.Section.CandidateInformation": "CandidateInformation",
 
   "Users.Validation.Message.firstName.Required": "Please enter firstName",
   "Users.Validation.Message.lastName.Required": "Please enter lastName",

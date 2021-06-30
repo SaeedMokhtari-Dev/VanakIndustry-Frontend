@@ -27,6 +27,7 @@ import EditElectionCandidateType from "../../entities/ElectionCandidateTypes/com
 import ElectionList from "../../entities/Elections/components/list/ElectionList";
 import EditElection from "../../entities/Elections/components/edit/EditElection";
 import AddCandidateElection from "../../entities/Elections/components/addCandidate/AddCandidateElection";
+import PresentUser from "../../entities/Users/components/present/PresentUser";
 
 
 const App: React.FC = () =>
@@ -70,6 +71,7 @@ const App: React.FC = () =>
                                     <Route exact roles={[RoleType.admin]} path={Routes.user} component={UserList} />
                                     <Route exact roles={[RoleType.admin]} path={Routes.editUser} component={EditUser} />
                                     <Route exact roles={[RoleType.admin]} path={Routes.addUser} component={EditUser} />
+                                    <Route exact roles={[RoleType.admin]} path={Routes.presentUser} component={PresentUser} />
 
                                     <Route exact roles={[RoleType.admin]} path={Routes.electionCandidateType} component={ElectionCandidateTypeList} />
                                     <Route exact roles={[RoleType.admin]} path={Routes.editElectionCandidateType} component={EditElectionCandidateType} />

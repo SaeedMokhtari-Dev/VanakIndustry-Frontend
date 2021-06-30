@@ -37,6 +37,9 @@ const Sidebar: React.FC<SidebarProps> = inject(Stores.pageStore)(observer(({page
         <Menu.Item key="user" icon={<HomeOutlined />}>
             <Link to={Routes.user}>{i18next.t('Users.Menu.Title')}</Link>
         </Menu.Item>
+        {/*<Menu.Item key="presentUser" icon={<HomeOutlined />}>
+            <Link to={Routes.presentUser}>{i18next.t('Users.Present.Menu.Title')}</Link>
+        </Menu.Item>*/}
         <Menu.Item key="electionCandidateType" icon={<HomeOutlined />}>
             <Link to={Routes.electionCandidateType}>{i18next.t('ElectionCandidateTypes.Menu.Title')}</Link>
         </Menu.Item>

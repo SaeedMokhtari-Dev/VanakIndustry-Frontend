@@ -12,6 +12,8 @@ import {message} from "antd";
 import EditUserHandler from "../handlers/edit/EditUserHandler";
 import DetailUserResponse from "../handlers/detail/DetailUserResponse";
 import UserStore from "../stores/UserStore";
+import PresentUserRequest from "../handlers/present/PresentUserRequest";
+import PresentUserHandler from "../handlers/present/PresentUserHandler";
 
 export default class EditUserViewModel
 {
@@ -24,6 +26,7 @@ export default class EditUserViewModel
     detailUserResponse: DetailUserResponse = new DetailUserResponse();
     addUserRequest: AddUserRequest = new AddUserRequest();
     editUserRequest: EditUserRequest = new EditUserRequest();
+    presentUserRequest: PresentUserRequest = new PresentUserRequest();
 
 
     constructor(public userStore: UserStore) {
@@ -115,6 +118,35 @@ export default class EditUserViewModel
         catch(e)
         {
             this.errorMessage = i18next.t('Users.Error.Edit.Message');
+            log.error(e);
+        }
+        finally
+        {
+            this.isProcessing = false;
+        }
+    }
+    public async presentUser(request: PresentUserRequest)
+    {
+        try
+        {
+            this.errorMessage = "";
+            this.isProcessing = true;
+            debugger;
+
+            let response = await PresentUserHandler.present(request);
+
+            if(response && response.success)
+            {
+                message.success(response.message, 5);
+                /*await this.usersStore.getUserViewModel.getAllUsers(new GetUsersRequest(20, 0));*/
+            }
+            else{
+                this.errorMessage = getLocalizedString(response.message);
+            }
+        }
+        catch(e)
+        {
+            this.errorMessage = i18next.t('Users.Error.Present.Message');
             log.error(e);
         }
         finally

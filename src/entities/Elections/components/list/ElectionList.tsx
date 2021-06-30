@@ -10,7 +10,7 @@ import {
     Table, Modal, PageHeader
 } from "antd";
 import {
-    EditOutlined, DeleteOutlined, CheckOutlined, CloseOutlined,
+    EditOutlined, DeleteOutlined, CheckOutlined, CloseOutlined, CarryOutOutlined,
     ExclamationCircleOutlined, PlusCircleOutlined, CheckCircleOutlined, CarOutlined
 } from '@ant-design/icons';
 import i18next from "i18next";
@@ -18,7 +18,7 @@ import Routes from "../../../../app/constants/Routes";
 import GetElectionRequest from "../../handlers/get/GetElectionRequest";
 import ElectionStore from 'entities/Elections/stores/ElectionStore';
 import ElectionColumns from "./ElectionColumns";
-import {getEditElectionRoute} from "../../../../app/utils/RouteHelper";
+import {getEditElectionRoute, getPresentElectionRoute} from "../../../../app/utils/RouteHelper";
 
 
 const { confirm } = Modal;
@@ -52,6 +52,10 @@ const ElectionList: React.FC<ElectionListProps> = inject(Stores.electionStore)(o
                 <Link to={getEditElectionRoute(record.key)}>
                     <Button type="primary" icon={<EditOutlined/>}
                             title={i18next.t("General.Button.Edit")}/>
+                </Link>
+                <Link to={getPresentElectionRoute(record.key)}>
+                    <Button type="link" icon={<CarryOutOutlined />}
+                            title={i18next.t("General.Button.Present")}/>
                 </Link>
                     <Button type="primary" danger icon={<DeleteOutlined/>}
                     onClick={() => showDeleteConfirm(record)}

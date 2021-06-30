@@ -5,8 +5,10 @@
   "General.Button.Add": "جديد",
   "General.Button.Edit": "ویرایش",
   "General.Button.Delete": "حذف",
+  "General.Button.Present": "افراد حاضر",
   "General.Button.ExportExcel": "اکسل",
   "General.Column.Action": "عملیات",
+  "General.Add.SaveAndContinueButton": "ذخیره و ادامه",
   "General.Add.SaveButton": "ذخیره",
   "General.Add.CancelButton": "انصراف",
   "General.Confirm.Delete": "آیا از حذف این مورد مطمئنید؟",
@@ -138,6 +140,10 @@
   "Users.Label.createdAt": "تاریخ ایجاد",
   "Users.Label.barcode": "بارکد",
 
+  "Users.Present.Menu.Title": "افراد حاضر",
+  "Users.Present.HeaderText": "مشخص کردن افراد حاضر در جلسه انتخابات",
+  "Users.Section.Barcode": "لطفا بارکد فرد حاضر در جلسه را اینجا وارد نمائید.",
+
   "Users.Button.Register": "ذخیره",
   "Users.Button.Cancel": "انصراف",
   "Users.Button.Accept": "تایید",
@@ -177,12 +183,15 @@
   "Users.Validation.Message.motherName.Required": "لطفا نام مادر را وارد نمائید.",
   "Users.Validation.Message.certificateId.Required": "لطفا شماره شناسنامه را وارد نمائید.",
   "Users.Validation.Message.email.Required": "لطفا ایمیل را وارد نمائید.",
+  "Users.Validation.Message.barcode.Required": "لطفا بارکد معتبر وارد نمائید.",
 
   "Api.User.Add.Successful": "کاربر جدید با موفقیت ثبت شد.",
   "Api.User.Edit.Successful": "کاربر انتخاب شده با موفقیت ویرایش شد.",
   "Api.User.Deleted.Successful": "کاربر انتخاب شده با موفقیت حذف شد.",
   "Api.User.Register.Successful": "ثبت نام با موفقیت انجام شد.",
   "Api.User.Activated.Successful": "کاربر انتخاب شده با موفقیت فعال شد.",
+  "Api.User.NotFound": "کاربری با این بارکد ثبت نشده است.",
+  "Api.User.PresentedBefore": "این کاربر قبلا حاضریش خورده است.",
 
   "Users.Error.Get.Message": "مشکلی در دریافت اطلاعات به وجود آمده است.",
   "Users.Error.Detail.Message": "مشکلی در دریافت جزئیات به وجود آمده است.",

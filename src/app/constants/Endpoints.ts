@@ -18,6 +18,7 @@ export default
     apiUserDelete: "/api/user/delete",
     apiUserList: "/api/user/list",
     apiUserActive: "/api/user/active",
+    apiUserPresent: "/api/user/present",
 
     apiElectionCandidateTypeAdd: "/api/election-candidate-type/add",
     apiElectionCandidateTypeEdit: "/api/election-candidate-type/edit",
