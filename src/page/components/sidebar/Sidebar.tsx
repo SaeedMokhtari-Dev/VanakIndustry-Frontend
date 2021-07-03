@@ -14,6 +14,7 @@ import Routes from "../../../app/constants/Routes";
 import i18next from "i18next";
 import UserContext from "../../../identity/contexts/UserContext";
 import RoleType from "../../../identity/constants/RoleType";
+import {getElectionProcessRoute} from "../../../app/utils/RouteHelper";
 
 const { Sider } = Layout;
 const { SubMenu } = Menu;
@@ -24,6 +25,7 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = inject(Stores.pageStore)(observer(({pageStore, children}) =>
 {
+    const [electionLink, setElectionLink] = React.useState("");
     useEffect(() => {
         onLoad();
 
@@ -47,22 +49,38 @@ const Sidebar: React.FC<SidebarProps> = inject(Stores.pageStore)(observer(({page
             <Link to={Routes.election}>{i18next.t('Elections.Menu.Title')}</Link>
         </Menu.Item>
     </Menu>)
-    const customerMenu= (<Menu theme="dark" defaultSelectedKeys={['app']} mode="inline">
-        <Menu.Item key="app" icon={<DashboardOutlined />}>
-            <Link to={Routes.app}>{i18next.t('Dashboard.Menu.Title')}</Link>
-        </Menu.Item>
-    </Menu>)
+
     async function onLoad() {
+        pageStore.onSidebarLoad();
+
+        if(UserContext.info.roles.includes(0)) {
+            await pageStore.presentElectionViewModel.getElectionPresent(UserContext.info.id);
+            if(pageStore.presentElectionViewModel?.presentElectionResponse?.electionId){
+                setElectionLink(getElectionProcessRoute(
+                    pageStore.presentElectionViewModel.presentElectionResponse.electionId
+                ));
+            }
+        }
     }
 
     function onUnload() {
-        //companiesStore.onCompaniesSidebarPageUnload();
+        pageStore.onSidebarUnLoad();
     }
 
     function toggle() {
         pageStore.isSidebarCollapsed = !pageStore?.isSidebarCollapsed
     }
-
+    const customerMenu= (<Menu theme="dark" defaultSelectedKeys={['app']} mode="inline">
+        <Menu.Item key="app" icon={<DashboardOutlined />}>
+            <Link to={Routes.app}>{i18next.t('Dashboard.Menu.Title')}</Link>
+        </Menu.Item>
+        {
+            electionLink &&
+            <Menu.Item key="electionProcess" icon={<DashboardOutlined />}>
+                <Link to={electionLink}>شرکت در انتخابات</Link>
+            </Menu.Item>
+        }
+    </Menu>)
     return (
         <Sider collapsible collapsed={pageStore?.isSidebarCollapsed} onCollapse={toggle}>
             <div>

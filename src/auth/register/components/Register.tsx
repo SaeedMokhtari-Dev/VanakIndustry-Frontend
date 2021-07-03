@@ -140,7 +140,7 @@ const Register: React.FC<RegisterProps> = inject(Stores.authStore)(observer(({au
         setMarried(e);
     }
     function checkDateValidation(rule: any, value: any, callback: any) {
-        debugger;
+        
     try {
         if (persianMoment(value, 'jYYYY/jMM/jDD').isValid()) {
             callback();

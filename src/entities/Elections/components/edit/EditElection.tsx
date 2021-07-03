@@ -111,7 +111,7 @@ const EditElection: React.FC<EditElectionProps> = inject(Stores.electionStore)(o
         electionStore.onElectionEditPageUnload();
     }
     function onSelectChanged(e, propName, key){
-        debugger;
+        
         if(electionId) {
             let election = viewModel.editElectionRequest.electionLimitItems.find(w => w.id == key);
             election[`${propName}`] = e;
@@ -141,7 +141,7 @@ const EditElection: React.FC<EditElectionProps> = inject(Stores.electionStore)(o
     function submitRage({ start, end }) {
         console.log("start ", start);
         console.log("end ", end);
-        debugger;
+        
         if(electionId) {
             viewModel.editElectionRequest.startDate = start;
             viewModel.editElectionRequest.endDate = end;
@@ -154,7 +154,7 @@ const EditElection: React.FC<EditElectionProps> = inject(Stores.electionStore)(o
 
     }
     function onIpLimitChanged(e){
-        debugger;
+        
         setIplimit(e);
         if(electionId)
         {
@@ -165,7 +165,7 @@ const EditElection: React.FC<EditElectionProps> = inject(Stores.electionStore)(o
         }
     }
     function onLimitCountChanged(e, key){
-        debugger;
+        
         if(electionId)
         {
             let election = viewModel.editElectionRequest.electionLimitItems.find(w => w.id == key);
@@ -179,7 +179,7 @@ const EditElection: React.FC<EditElectionProps> = inject(Stores.electionStore)(o
         }
     }
     function add(){
-        debugger;
+        
         let newKeyId = keyId + 1;
         setKeyId(newKeyId);
         let electionLimitItem: ElectionLimitItem = new ElectionLimitItem();
@@ -195,7 +195,7 @@ const EditElection: React.FC<EditElectionProps> = inject(Stores.electionStore)(o
         }
     }
     function remove(key){
-        debugger;
+        
         if(electionId)
         {
             viewModel.editElectionRequest.electionLimitItems =
@@ -209,7 +209,7 @@ const EditElection: React.FC<EditElectionProps> = inject(Stores.electionStore)(o
         }
     }
     function checkDateTimeValidation(rule: any, value: any, callback: any, propName: string) {
-        debugger;
+        
         try {
             if (persianMoment(value, 'jYYYY/jMM/jDD HH:mm:ss').isValid()) {
                 if(electionId) {

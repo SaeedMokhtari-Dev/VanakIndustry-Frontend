@@ -5,6 +5,7 @@ import CustomerStore from "../../customer/stores/CustomerStore";
 import UserStore from "../../entities/Users/stores/UserStore";
 import ElectionCandidateTypeStore from "../../entities/ElectionCandidateTypes/stores/ElectionCandidateTypeStore";
 import ElectionStore from "../../entities/Elections/stores/ElectionStore";
+import ElectionProcessStore from "../../entities/ElectionProcesses/stores/ElectionProcessStore";
 
 export class AppStore
 {
@@ -15,6 +16,7 @@ export class AppStore
     user: UserStore;
     electionCandidateType: ElectionCandidateTypeStore;
     election: ElectionStore;
+    electionProcessStore: ElectionProcessStore;
 
     constructor()
     {
@@ -25,5 +27,6 @@ export class AppStore
         this.user = new UserStore(this);
         this.electionCandidateType = new ElectionCandidateTypeStore(this);
         this.election = new ElectionStore(this);
+        this.electionProcessStore = new ElectionProcessStore(this);
     }
 }

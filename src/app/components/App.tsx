@@ -28,6 +28,7 @@ import ElectionList from "../../entities/Elections/components/list/ElectionList"
 import EditElection from "../../entities/Elections/components/edit/EditElection";
 import AddCandidateElection from "../../entities/Elections/components/addCandidate/AddCandidateElection";
 import PresentUser from "../../entities/Users/components/present/PresentUser";
+import SelectElectionProcess from "../../entities/ElectionProcesses/components/select/SelectElectionProcess";
 
 
 const App: React.FC = () =>
@@ -81,6 +82,8 @@ const App: React.FC = () =>
                                     <Route exact roles={[RoleType.admin]} path={Routes.editElection} component={EditElection} />
                                     <Route exact roles={[RoleType.admin]} path={Routes.addElection} component={EditElection} />
                                     <Route exact roles={[RoleType.admin]} path={Routes.addCandidateElection} component={AddCandidateElection} />
+
+                                    <Route exact roles={[RoleType.user]} path={Routes.electionProcess} component={SelectElectionProcess} />
 
                                     <Route component={NotFoundPage} />
                                 </Switch>

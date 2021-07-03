@@ -25,7 +25,7 @@ const CustomerDashboard: React.FC<DashboardProps> = inject(Stores.customerStore)
     }, []);
 
     async function onLoad() {
-        debugger;
+        
         customerStore.onCustomerGetPageLoad();
         await customerStore.getCustomerViewModel.getDetailUser(UserContext.info.id);
 

@@ -27,6 +27,7 @@ export default
     apiElectionCandidateTypeDelete: "/api/election-candidate-type/delete",
     apiElectionCandidateTypeList: "/api/election-candidate-type/list",
 
+
     apiElectionAdd: "/api/election/add",
     apiElectionEdit: "/api/election/edit",
     apiElectionGet: "/api/election/get",
@@ -34,6 +35,14 @@ export default
     apiElectionDelete: "/api/election/delete",
     apiElectionAddCandidate: "/api/election/add-candidate",
     apiElectionList: "/api/election/list",
+    apiElectionPresent: "/api/election/present",
+
+    apiElectionCandidateGet: "/api/election-candidate/get",
+
+    apiSelectElectionCandidateGet: "/api/select-election-candidate/get",
+    apiSelectElectionCandidateAdd: "/api/select-election-candidate/add",
+
+    apiAttachmentDetail: "/api/attachment/detail",
 
     apiDashboardCustomerGet: "/api/dashboard/customer",
     apiDashboardSupplierGet: "/api/dashboard/supplier",

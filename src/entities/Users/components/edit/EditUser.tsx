@@ -175,7 +175,7 @@ const EditUser: React.FC<EditUserProps> = inject(Stores.userStore)(observer(({us
         return true;
     }
     function reloadImages(image){
-        debugger;
+        
         viewModel.detailUserResponse.cardImage = image;
     }
     const uploadButton = (
@@ -195,7 +195,7 @@ const EditUser: React.FC<EditUserProps> = inject(Stores.userStore)(observer(({us
         return true;
     }
     function onMarriedChanged(e){
-        debugger;
+        
         if(userId)
         {
             viewModel.editUserRequest.married = e;
@@ -716,13 +716,7 @@ const EditUser: React.FC<EditUserProps> = inject(Stores.userStore)(observer(({us
                     <Col span={8}>
                         <Form.Item name="candidatePictureImage" initialValue={viewModel?.detailUserResponse?.candidatePictureImage}
                                    key={"candidatePictureImage"}
-                                   label={i18next.t("Users.Label.candidatePictureImage")}
-                                   rules={[
-                                       {
-                                           required: true,
-                                           message: i18next.t("Users.Validation.Message.candidatePictureImage.Required")
-                                       }
-                                   ]}>
+                                   label={i18next.t("Users.Label.candidatePictureImage")}>
                             <Upload
                                 key={"candidatePictureImage"}
                                 className={"avatar-uploader"}

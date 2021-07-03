@@ -21,3 +21,7 @@ export function getAddCandidateElectionRoute(electionId: number = null, election
     return Routes.addCandidateElection.replace('/:electionId', electionId ? `/${electionId}` : '')
         .replace('/:electionCandidateTypeId', electionCandidateTypeId ? `/${electionCandidateTypeId}` : '');
 }
+export function getElectionProcessRoute(electionId: number = null): string
+{
+    return Routes.electionProcess.replace('/:electionId', electionId ? `/${electionId}` : '');
+}

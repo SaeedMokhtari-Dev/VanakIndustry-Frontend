@@ -52,6 +52,7 @@ ReactDOM.render(
                       userStore={appStore.user}
                       electionCandidateTypeStore={appStore.electionCandidateType}
                       electionStore={appStore.election}
+                      electionProcessStore={appStore.electionProcessStore}
             >
                 <App />
             </Provider>

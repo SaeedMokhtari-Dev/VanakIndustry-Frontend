@@ -102,7 +102,7 @@ export default class EditUserViewModel
         {
             this.errorMessage = "";
             this.isProcessing = true;
-            debugger;
+            
 
             let response = await EditUserHandler.edit(request);
 
@@ -131,7 +131,7 @@ export default class EditUserViewModel
         {
             this.errorMessage = "";
             this.isProcessing = true;
-            debugger;
+            
 
             let response = await PresentUserHandler.present(request);
 

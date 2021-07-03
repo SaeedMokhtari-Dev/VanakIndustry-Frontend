@@ -129,7 +129,7 @@ export default class EditElectionViewModel
         {
             this.errorMessage = "";
             this.isProcessing = true;
-            debugger;
+            
 
             let response = await EditElectionHandler.edit(request);
 

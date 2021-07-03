@@ -166,7 +166,7 @@ const AddCandidateElection: React.FC<AddCandidateElectionProps> = inject(Stores.
         electionStore.onAddCandidateElectionEditPageUnload();
     }
     function onSelectChanged(e, propName, key){
-        debugger;
+        
         if(electionId) {
             let election = viewModel.editElectionRequest.electionLimitItems.find(w => w.id == key);
             election[`${propName}`] = e;

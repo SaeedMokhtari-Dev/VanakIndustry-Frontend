@@ -23,5 +23,7 @@ export default
     election: "/app/election",
     editElection: "/app/election/edit/:electionId",
     addCandidateElection: "/app/election/addCandidate/:electionId/:electionCandidateTypeId",
-    addElection: "/app/election/add"
+    addElection: "/app/election/add",
+
+    electionProcess: "/app/electionProcess/:electionId"
 }

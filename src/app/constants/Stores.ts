@@ -6,5 +6,6 @@ export default {
     adminStore: 'adminStore',
     userStore: 'userStore',
     electionCandidateTypeStore: 'electionCandidateTypeStore',
-    electionStore: 'electionStore'
+    electionStore: 'electionStore',
+    electionProcessStore: 'electionProcessStore',
 }
